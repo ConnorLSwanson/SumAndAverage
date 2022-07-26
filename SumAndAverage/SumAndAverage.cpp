@@ -6,6 +6,9 @@
 #include <iostream>
 using namespace std;
 
+int calculateSum(int n1, int n2, int n3);
+double calculateAvg(int total);
+
 int main()
 {
     // Prompt user for three numbers
@@ -18,15 +21,22 @@ int main()
     cin >> z;
 
     // Calculate the sum of the three numbers
-    int sum = 0;
-    sum = x + y + x;
+    int sum = calculateSum(x, y, z);
 
     // Calculate the average of the three numbers
-    double avg = 0;
-    avg = sum / 3.0;
+    double avg = calculateAvg(sum);
 
     // Show the user the data
     cout << "Sum = " << sum << endl;
     cout << "Average = " << avg << endl;
 }
 
+int calculateSum(int n1, int n2, int n3)
+{
+    return n1 + n2 + n3;
+}
+
+double calculateAvg(int total)
+{
+    return (double)total / 3.0;
+}
